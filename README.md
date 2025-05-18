@@ -10,7 +10,7 @@ This microservice provides a REST API to:
 
 **Replace DEFAULT_IMAGE_PATH in defaultPath.js**
 
-    Replace the DEFAULT_IMAGE_PATH with the folder you have your images in
+- Replace the DEFAULT_IMAGE_PATH with the folder you have your images in
 
 ---
 
