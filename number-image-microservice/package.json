@@ -1,0 +1,14 @@
+{
+  "name": "number-image-microservice",
+  "version": "1.0.0",
+  "description": "A microservice that returns the file path of an image based on a given number.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
