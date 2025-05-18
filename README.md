@@ -23,7 +23,7 @@ This microservice provides a REST API to:
 GET /api/images/image/{number}  
 
 **Parameters:**  
-- number (required): The image number.
+- number (required): the image number.
 
 **Responses:**
 - 200 code  
@@ -74,8 +74,8 @@ print(response.json())
 GET /api/images/random-range?start={start}&end={end}
 
 **Parameters:**  
-- start (required): Start of the range.
-- end (required): End of the range.
+- start (required): start of the range.
+- end (required): end of the range.
 
 **Responses:**
 - 200 code  
