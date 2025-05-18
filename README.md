@@ -8,6 +8,12 @@ This microservice provides a REST API to:
 
 ---
 
+**Replace DEFAULT_IMAGE_PATH in defaultPath.js**
+
+    Replace the DEFAULT_IMAGE_PATH with the folder you have your images in
+
+---
+
 ## Endpoints
 
 
@@ -122,17 +128,16 @@ print(response.json())
 ## Installation and Running the Server
 
 1. **Install dependencies**  
+
    Open Command Prompt in the project directory and run:
 
    npm install
 
 
 2. **Start the server**  
+
    In Command Prompt, run:
 
    node src/app.js
-
-3. **Replace DEFAULT_IMAGE_PATH in defaultPath.js**
-    Replace the DEFAULT_IMAGE_PATH with the folder you have your images in
 
 The server will start at `http://localhost:3000`.
