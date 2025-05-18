@@ -6,82 +6,112 @@ This microservice provides a REST API to:
 - Get a random image path within a range
 - List all available image paths in a pre-defined folder
 
-## Project Structure
+---
 
-```
-number-image-microservice
-├── src
-│   ├── app.js               # Entry point of the application
-│   ├── routes
-│   │   └── image.js         # Defines routes for the image service
-│   ├── controllers
-│   │   └── imageController.js # Contains the logic to get image paths
-│   └── config
-│       └── defaultPaths.js   # Holds default file paths for images
-├── package.json              # npm configuration file
-└── README.md                 # Project documentation
-```
+## Endpoints
 
-## Installation
+---
 
-To install the necessary dependencies, run:
+### 1. Get Image by Number
 
-```
-npm install
-```
+**Request:**  
+`GET /api/images/image/{number}`  
+or  
+`GET /api/images/image?number=1`
 
-## Usage
+**Parameters:**  
+- `number` (required): The image number.
 
-To start the server, use the following command:
+**Responses:**
+- `200 OK`  
+  ```json
+  { "imagePath": "images/1.png" }
+  ```
+- `400 Bad Request` – No image number provided.
+- `404 Not Found` – Image number not found.
 
-```
-npm start
-```
-or
-```
-node src/app.js
+**Example (Python):**
+```python
+import requests
+resp = requests.get('http://localhost:3000/api/images/image/1')
+print(resp.json())
 ```
 
-The service will be available at `http://localhost:3000/api/images`.
+---
 
-## API Endpoints
+### 2. Get a Random Image
 
-- **Get image by number:**  
-  `GET /api/images/image/:number`  
-  or  
-  `GET /api/images/image?number=1`
+**Request:**  
+`GET /api/images/random`
 
-- **Get a random image:**  
-  `GET /api/images/random`
+**Parameters:**  
+None
 
-- **Get a random image in a range:**  
-  `GET /api/images/random-range?start=2&end=5`
+**Responses:**
+- `200 OK`  
+  ```json
+  { "imagePath": "images/3.png" }
+  ```
+- `404 Not Found` – No image available in the default folder.
 
-- **List all available images:**  
-  `GET /api/images/list`
-
-## Example
-
-To get the image path for the number 1:
-```
-GET http://localhost:3000/api/images/image/1
-```
-
-To get a random image:
-```
-GET http://localhost:3000/api/images/random
+**Example (Python):**
+```python
+import requests
+resp = requests.get('http://localhost:3000/api/images/random')
+print(resp.json())
 ```
 
-To get a random image in a range (e.g., 2 to 5):
-```
-GET http://localhost:3000/api/images/random-range?start=2&end=5
+---
+
+### 3. Get a Random Image in a Range
+
+**Request:**  
+`GET /api/images/random-range?start={start}&end={end}`
+
+**Parameters:**  
+- `start` (required): Start of the range.
+- `end` (required): End of the range.
+
+**Responses:**
+- `200 OK`  
+  ```json
+  { "imagePath": "images/4.png" }
+  ```
+- `400 Bad Request` – Missing start and/or end parameter.
+- `404 Not Found` – No image found in the given range.
+
+**Example (Python):**
+```python
+import requests
+resp = requests.get('http://localhost:3000/api/images/random-range?start=2&end=5')
+print(resp.json())
 ```
 
-To list all available images:
-```
-GET http://localhost:3000/api/images/list
-```
+---
 
-## Contributing
+### 4. List All Available Images
 
-Feel free to submit issues or pull requests to improve the functionality of this microservice.
+**Request:**  
+`GET /api/images/list`
+
+**Parameters:**  
+None
+
+**Responses:**
+- `200 OK`  
+  ```json
+  {
+    "images": [
+      "images/1.png",
+      "images/2.png",
+      "images/3.png"
+    ]
+  }
+  ```
+
+**Example (Python):**
+```python
+import requests
+resp = requests.get('http://localhost:3000/api/images/list')
+print(resp.json())
+```
