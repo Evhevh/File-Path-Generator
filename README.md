@@ -158,4 +158,8 @@ for img in data.get("images", []):
 
 The server will start at `http://localhost:3000`.
 
+---
+
+**UML**
+
 ![UML Diagram](UML.jpg)
