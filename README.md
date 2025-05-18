@@ -113,3 +113,21 @@ import requests
 resp = requests.get('http://localhost:3000/api/images/list')
 print(resp.json())
 ```
+
+---
+
+## Installation and Running the Server
+
+1. **Install dependencies**  
+   Open Command Prompt in the project directory and run:
+
+   npm install
+
+
+2. **Start the server**  
+   In Command Prompt, run:
+
+   node src/app.js
+
+
+The server will start at `http://localhost:3000`.
