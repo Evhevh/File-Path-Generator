@@ -22,7 +22,7 @@ GET /api/images/image/{number}
 **Responses:**
 - 200 code  
   ```json
-  { "imagePath": "folder-path/image-1.jpg" }
+  { "imagePath": "DEFAULT_IMAGE_PATH/image-1.jpg" }
   ```
 - 400 error code if no image number provided.
 - 404 not found if image number not found.
@@ -48,7 +48,7 @@ None
 **Responses:**
 - 200 code 
   ```json
-  { "imagePath": "folder-path/image-3.jpg" }
+  { "imagePath": "DEFAULT_IMAGE_PATH/image-3.jpg" }
   ```
 - 404 error if no image available in the default folder.
 
@@ -74,7 +74,7 @@ GET /api/images/random-range?start={start}&end={end}
 **Responses:**
 - 200 code  
   ```json
-  { "imagePath": "folder-path/image-4.jpg" }
+  { "imagePath": "DEFAULT_IMAGE_PATH/image-4.jpg" }
   ```
 - 400 error code if missing start and/or end parameter.
 - 404 error code if no image found in the given range.
@@ -102,9 +102,9 @@ None
   ```json
   {
     "images": [
-      "folder-path/image-1.jpg",
-      "folder-path/image-2.jpg",
-      "folder-path/image-3.jpg"
+      "DEFAULT_IMAGE_PATH/image-1.jpg",
+      "DEFAULT_IMAGE_PATH/image-2.jpg",
+      "DEFAULT_IMAGE_PATH/image-3.jpg"
     ]
   }
   ```
