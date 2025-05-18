@@ -10,7 +10,6 @@ This microservice provides a REST API to:
 
 ## Endpoints
 
----
 
 ### 1. Get Image by Number
 
