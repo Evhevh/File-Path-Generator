@@ -16,21 +16,19 @@ This microservice provides a REST API to:
 
 **Request:**  
 `GET /api/images/image/{number}`  
-or  
-`GET /api/images/image?number=1`
 
 **Parameters:**  
 - `number` (required): The image number.
 
 **Responses:**
-- `200 OK`  
+- 200 code  
   ```json
   { "imagePath": "images/1.png" }
   ```
-- `400 Bad Request` – No image number provided.
-- `404 Not Found` – Image number not found.
+- 400 error code if no image number provided.
+- 404 not found if image number not found.
 
-**Example (Python):**
+**Example:**
 ```python
 import requests
 resp = requests.get('http://localhost:3000/api/images/image/1')
@@ -48,13 +46,13 @@ print(resp.json())
 None
 
 **Responses:**
-- `200 OK`  
+- 200 code 
   ```json
   { "imagePath": "images/3.png" }
   ```
-- `404 Not Found` – No image available in the default folder.
+- 404 error if no image available in the default folder.
 
-**Example (Python):**
+**Example:**
 ```python
 import requests
 resp = requests.get('http://localhost:3000/api/images/random')
@@ -73,14 +71,14 @@ print(resp.json())
 - `end` (required): End of the range.
 
 **Responses:**
-- `200 OK`  
+- 200 code  
   ```json
   { "imagePath": "images/4.png" }
   ```
-- `400 Bad Request` – Missing start and/or end parameter.
-- `404 Not Found` – No image found in the given range.
+- 400 error code if missing start and/or end parameter.
+- 404 error code if no image found in the given range.
 
-**Example (Python):**
+**Example:**
 ```python
 import requests
 resp = requests.get('http://localhost:3000/api/images/random-range?start=2&end=5')
@@ -98,7 +96,7 @@ print(resp.json())
 None
 
 **Responses:**
-- `200 OK`  
+- 200 code  
   ```json
   {
     "images": [
@@ -109,7 +107,7 @@ None
   }
   ```
 
-**Example (Python):**
+**Example:**
 ```python
 import requests
 resp = requests.get('http://localhost:3000/api/images/list')
