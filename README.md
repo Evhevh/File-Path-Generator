@@ -15,10 +15,10 @@ This microservice provides a REST API to:
 ### 1. Get Image by Number
 
 **Request:**  
-`GET /api/images/image/{number}`  
+GET /api/images/image/{number}  
 
 **Parameters:**  
-- `number` (required): The image number.
+- number (required): The image number.
 
 **Responses:**
 - 200 code  
@@ -40,7 +40,7 @@ print(resp.json())
 ### 2. Get a Random Image
 
 **Request:**  
-`GET /api/images/random`
+GET /api/images/random
 
 **Parameters:**  
 None
@@ -64,11 +64,11 @@ print(resp.json())
 ### 3. Get a Random Image in a Range
 
 **Request:**  
-`GET /api/images/random-range?start={start}&end={end}`
+GET /api/images/random-range?start={start}&end={end}
 
 **Parameters:**  
-- `start` (required): Start of the range.
-- `end` (required): End of the range.
+- start (required): Start of the range.
+- end (required): End of the range.
 
 **Responses:**
 - 200 code  
@@ -90,7 +90,7 @@ print(resp.json())
 ### 4. List All Available Images
 
 **Request:**  
-`GET /api/images/list`
+GET /api/images/list
 
 **Parameters:**  
 None
