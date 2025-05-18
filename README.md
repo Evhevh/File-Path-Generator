@@ -38,7 +38,10 @@ GET /api/images/image/{number}
 import requests
 
 response = requests.get('http://localhost:3000/api/images/image/1')
-print(response.json())
+
+data = response.json()
+print(data) # Prints the full response
+print(response.json().get("imagePath")) # Prints the image path
 ```
 
 ---
@@ -63,7 +66,10 @@ None
 import requests
 
 response = requests.get('http://localhost:3000/api/images/random')
-print(response.json())
+
+data = response.json()
+print(data) # Prints the full response
+print(response.json().get("imagePath")) # Prints the image path
 ```
 
 ---
@@ -90,7 +96,10 @@ GET /api/images/random-range?start={start}&end={end}
 import requests
 
 response = requests.get('http://localhost:3000/api/images/random-range?start=2&end=5')
-print(response.json())
+
+data = response.json()
+print(data) # Prints the full response
+print(data.get("imagePath")) # Prints the image path
 ```
 
 ---
@@ -120,7 +129,14 @@ None
 import requests
 
 response = requests.get('http://localhost:3000/api/images/list')
-print(response.json())
+
+data = response.json()
+print(data)  # Prints the full response
+print(data.get("images"))  # Prints the list of image paths
+
+# Print each image path individually
+for img in data.get("images", []):
+    print(img)
 ```
 
 ---
