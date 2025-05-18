@@ -22,7 +22,7 @@ GET /api/images/image/{number}
 **Responses:**
 - 200 code  
   ```json
-  { "imagePath": "images/image-1.jpg" }
+  { "imagePath": "folder-path/image-1.jpg" }
   ```
 - 400 error code if no image number provided.
 - 404 not found if image number not found.
@@ -48,7 +48,7 @@ None
 **Responses:**
 - 200 code 
   ```json
-  { "imagePath": "images/image-3.jpg" }
+  { "imagePath": "folder-path/image-3.jpg" }
   ```
 - 404 error if no image available in the default folder.
 
@@ -74,7 +74,7 @@ GET /api/images/random-range?start={start}&end={end}
 **Responses:**
 - 200 code  
   ```json
-  { "imagePath": "images/image-4.jpg" }
+  { "imagePath": "folder-path/image-4.jpg" }
   ```
 - 400 error code if missing start and/or end parameter.
 - 404 error code if no image found in the given range.
@@ -102,9 +102,9 @@ None
   ```json
   {
     "images": [
-      "images/image-1.jpg",
-      "images/image-2.jpg",
-      "images/image-3.jpg"
+      "folder-path/image-1.jpg",
+      "folder-path/image-2.jpg",
+      "folder-path/image-3.jpg"
     ]
   }
   ```
@@ -132,5 +132,7 @@ print(response.json())
 
    node src/app.js
 
+3. **Replace DEFAULT_IMAGE_PATH in defaultPath.js**
+    Replace the DEFAULT_IMAGE_PATH with the folder you have your images in
 
 The server will start at `http://localhost:3000`.
