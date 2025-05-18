@@ -157,3 +157,5 @@ for img in data.get("images", []):
    node src/app.js
 
 The server will start at `http://localhost:3000`.
+
+![UML Diagram](UML.jpg)
