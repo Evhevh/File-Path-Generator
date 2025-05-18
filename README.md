@@ -31,7 +31,7 @@ GET /api/images/image/{number}
   { "imagePath": "DEFAULT_IMAGE_PATH/image-1.jpg" }
   ```
 - 400 error code if no image number provided.
-- 404 not found if image number not found.
+- 404 error code if image number not found.
 
 **Example:**
 ```python
