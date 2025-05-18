@@ -23,7 +23,7 @@ GET /api/images/image/{number}
 **Responses:**
 - 200 code  
   ```json
-  { "imagePath": "images/1.png" }
+  { "imagePath": "images/image-1.jpg" }
   ```
 - 400 error code if no image number provided.
 - 404 not found if image number not found.
@@ -31,8 +31,9 @@ GET /api/images/image/{number}
 **Example:**
 ```python
 import requests
-resp = requests.get('http://localhost:3000/api/images/image/1')
-print(resp.json())
+
+response = requests.get('http://localhost:3000/api/images/image/1')
+print(response.json())
 ```
 
 ---
@@ -48,15 +49,16 @@ None
 **Responses:**
 - 200 code 
   ```json
-  { "imagePath": "images/3.png" }
+  { "imagePath": "images/image-3.jpg" }
   ```
 - 404 error if no image available in the default folder.
 
 **Example:**
 ```python
 import requests
-resp = requests.get('http://localhost:3000/api/images/random')
-print(resp.json())
+
+response = requests.get('http://localhost:3000/api/images/random')
+print(response.json())
 ```
 
 ---
@@ -73,7 +75,7 @@ GET /api/images/random-range?start={start}&end={end}
 **Responses:**
 - 200 code  
   ```json
-  { "imagePath": "images/4.png" }
+  { "imagePath": "images/image-4.jpg" }
   ```
 - 400 error code if missing start and/or end parameter.
 - 404 error code if no image found in the given range.
@@ -81,8 +83,9 @@ GET /api/images/random-range?start={start}&end={end}
 **Example:**
 ```python
 import requests
-resp = requests.get('http://localhost:3000/api/images/random-range?start=2&end=5')
-print(resp.json())
+
+response = requests.get('http://localhost:3000/api/images/random-range?start=2&end=5')
+print(response.json())
 ```
 
 ---
@@ -100,9 +103,9 @@ None
   ```json
   {
     "images": [
-      "images/1.png",
-      "images/2.png",
-      "images/3.png"
+      "images/image-1.jpg",
+      "images/image-2.jpg",
+      "images/image-3.jpg"
     ]
   }
   ```
@@ -110,8 +113,9 @@ None
 **Example:**
 ```python
 import requests
-resp = requests.get('http://localhost:3000/api/images/list')
-print(resp.json())
+
+response = requests.get('http://localhost:3000/api/images/list')
+print(response.json())
 ```
 
 ---
